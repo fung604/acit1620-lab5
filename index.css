@@ -47,22 +47,27 @@
 
 html,body{
     height: 100%;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 @media screen and (min-width:800px) {
     header {
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        display: grid;
+        grid-template-areas:
+        "header1 header2 header3"
+        "div div div"
+        "footer footer footer"
     }
     header > div {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: max-content max-content;
+        grid-area: header1;
     }
+
+    header> nav {
+        grid-area: header3;
+    }
+
     header > div > div{
-        display:grid;
+        display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         column-gap: 2em;
@@ -72,7 +77,7 @@ html,body{
     }
 
     #grid{
-        display:grid;
+        display: grid;
         grid-template-rows: auto 250px 250px 250px 250px;
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -93,7 +98,7 @@ html,body{
     }
     footer > a > div {
         padding: 4em;
-        display:flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -104,9 +109,10 @@ html,body{
 }
 
 #flexbox{
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
+
 #canvas{
     display: flex;
     align-items: center;
@@ -115,7 +121,7 @@ html,body{
 
 @media screen and (max-width:800px) {
     footer > a > div{
-        display:flex;
+        display: flex;
         flex-direction: column-reverse;
         align-items: center;
     }
