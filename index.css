@@ -23,23 +23,16 @@ The <div> inside that div, containing two paragraphs with the text "CSS Flexbox 
 
     header > div {
         display: grid;
-        min-width: 800px;
-        grid-template-rows: max-content auto;
-    }
-
-    header> nav {
-        display: wrapper;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 2em;
+        grid-template-rows: max-content max-content;
+        grid-template-columns: auto; 
     }
 
     header > div > div{
-        display: grid;
+        display:grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         column-gap: 2em;
     }
-
     section > h2{
         font-size: 6em;
     }
