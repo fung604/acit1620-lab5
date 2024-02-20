@@ -17,17 +17,20 @@ The <div> inside that div, containing two paragraphs with the text "CSS Flexbox 
 @media screen and (min-width:800px) {
     header {
         display: grid;
-        grid-template-areas:
-        "header1 header2 header3"
-        "div div div"
-        "footer footer footer"
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
     }
+
     header > div {
-        grid-area: header1;
+        display: grid;
+        min-width: 800px;
+        grid-template-rows: max-content auto;
     }
 
     header> nav {
-        grid-area: header3;
+        display: wrapper;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2em;
     }
 
     header > div > div{
@@ -36,6 +39,7 @@ The <div> inside that div, containing two paragraphs with the text "CSS Flexbox 
         grid-template-rows: auto;
         column-gap: 2em;
     }
+
     section > h2{
         font-size: 6em;
     }
@@ -85,6 +89,7 @@ On screens wider than 800px, the <div> must additionally have 4em of padding on 
         justify-content: space-between;
         align-items: center;
     }
+
     footer > a > div > p {
         margin-top:0;
     }
